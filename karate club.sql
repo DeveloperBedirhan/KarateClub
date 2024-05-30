@@ -1,4 +1,4 @@
-drop database KARATE;
+#drop database KARATE;
 CREATE DATABASE KARATE;
 USE KARATE;
 
@@ -71,15 +71,15 @@ PRIMARY KEY (hoca_id, grup_id),
         ON DELETE CASCADE
 );
 INSERT INTO ogrenciler(id, ad, soyad, dogum_tarihi, uye_tarihi)
-	VALUES (01, 'emir', 'emiroglu', '1997-01-01', '2022-01-01'),
-		   (02, 'ilayda', 'rabia', '2002-01-01','2021-01-01'),
-           (03, 'yaso', 'aslan', '2000-01-01','2020-01-01'),
-           (04, 'efe', 'aydın', '1985-01-01','2019-01-01');
+	VALUES (01, 'Emir', 'Deniz', '1997-02-01', '2022-12-09'),
+		   (02, 'İlayda', 'Çakır', '2002-01-04','2021-04-07'),
+           (03, 'Yasin', 'Arslan', '2000-03-08','2020-03-01'),
+           (04, 'Efe', 'Aydın', '1985-01-01','2019-01-06');
 INSERT INTO hocalar(id, ad, soyad, dogum_tarihi)
-	VALUES (01, 'ugur', 'balkan', '1997-01-01'),
-		   (02, 'emre', 'vecdi', '2002-01-01'),
-           (03, 'tugba', 'deniz', '2000-01-01'),
-           (04, 'engin', 'men', '1985-01-01');
+	VALUES (01, 'Uğur', 'Balkan', '1997-03-05'),
+		   (02, 'Emre', 'Levent', '2002-04-08'),
+           (03, 'Tuğba', 'Ateş', '2000-02-05'),
+           (04, 'Engin', 'Demir', '1985-10-12');
 INSERT INTO gruplar(id, adi, seviye)
 	VALUES (01, 'ders1', 'A'),
 		   (02, 'ders2', 'B'),
@@ -121,7 +121,6 @@ INSERT INTO s_hocalar (id, ad, soyad, dogum_tarihi)
 	VALUES (OLD.id, OLD.ad, OLD.soyad, OLD.dogum_tarihi);
 END $$
 DELIMITER ;
-
 
 DELIMITER $$
 CREATE TRIGGER s_gruplar BEFORE DELETE
